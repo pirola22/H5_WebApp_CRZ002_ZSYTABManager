@@ -1,0 +1,130 @@
+<form name="submitForm" novalidate>
+	<!-- Error Message -->
+	<div class="container-fluid">
+		<div class="alert alert-danger" role="alert" ng-if="hasMyError">
+			<span>{{error}}
+				<button type="button" class="close" ng-click="AppCtrl.hideMyError()">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</span> <span>
+				<ol>
+					<li ng-repeat="errorMessage in ::myErrorMessages">{{myError}}</li>
+				</ol>
+			</span>
+		</div>
+	</div>
+	<div class="modal-header">
+		<button type="button" class="close"
+			ng-click="AppCtrl.closeModalWindow()">&times;</button>
+		<h4 class="modal-title">{{::languageConstants.get('Create' )}}</h4>
+		<tr input type="text" class="h5-input-xs" class="h5-color-graphite">
+			<h5>{{::languageConstants.get('Table Name')}}</h5>
+			<input type="text" class="h5-input-xs"
+				ng-model="ZSYTABModule.ZSYTABRecord.PK01" name="PK01"
+				title="Table Name" style="text-align: left" readonly>
+				<button type ="submit" class="h5Button {{theme.button}}"
+				ng-click="AppCtrl.addRecord()">{{::languageConstants.get('Add
+				Record')}}</button>
+			<button class="h5Button {{theme.button}}"
+				ng-click="AppCtrl.closeModalWindow()">{{::languageConstants.get('Cancel')}}</button>
+			
+		</tr>
+	</div>
+	<div class="modal-body">
+		<!-- Error Message 
+	<div class="container-fluid">
+		<div class="alert alert-danger" role="alert"
+			ng-if="modelobject.childmodelobject.hasError">
+			<span>{{modelobject.childmodelobject.errorMessage}}</span>
+			<button type="button" class="close"
+				ng-click="modelobject.childmodelobject.hasError=false">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+	</div> -->
+		<div class="panel {{theme.panel}}">
+			<div class="table-responsive h5-padding-md">
+				<div style="clear: both">
+					<div class="table-responsive h5-padding-md">
+						<div class="row">
+							<div class="col-xs-12 col-sm-12 col-md-3">
+								<table class="inlineTable">
+									<tr>
+										<td>
+											<table class="inlineTable">
+
+												<tr input type="text" class="h5-input-xs"
+													class="h5-color-graphite">
+													<td><h5>{{::languageConstants.get('Table
+															Description')}}</h5></td>
+													<td>:</td>
+													<td><input type="TEXT" class="h5-input-md"
+														ng-model="ZSYTABModule.ZSYTABRecord.AL30" name="AL30"
+														title="Table Description" style="text-align: left"
+														maxlength="30" autofocus></td>
+
+												</tr>
+												<tr input type="text" class="h5-input-md"
+													class="h5-color-graphite">
+													<td><h5>{{::languageConstants.get('Protocol')}}</h5></td>
+													<td>:</td>
+													<td><input type="TEXT" class="h5-input-sm"
+														ng-model="ZSYTABModule.ZSYTABRecord.AL34" name="AL34"
+														title="Protocol" style="text-align: left"></td>
+
+												</tr>
+												<tr input type="text" class="h5-input-xs"
+													class="h5-color-graphite">
+													<td><h5>{{::languageConstants.get('Server')}}</h5></td>
+													<td>:</td>
+													<td><input type="TEXT" class="h5-input-md"
+														ng-model="ZSYTABModule.ZSYTABRecord.AL31" name="AL31"
+														title="Server" style="text-align: left" maxlength="30"></td>
+												</tr>
+											</table>
+										</td>
+										<td>
+											<table class="inlineTable">
+												<tr input type="text" class="h5-input-xs"
+													class="h5-color-graphite">
+													<td><h5>{{::languageConstants.get('Folder
+															Path')}}</h5></td>
+													<td>:</td>
+													<td><input type="TEXT" class="h5-input-sm"
+														ng-model="ZSYTABModule.ZSYTABRecord.AL32" name="AL32"
+														title="Folder path" style="text-align: left"
+														maxlength="30"></td>
+
+												</tr>
+												<tr input type="text" class="h5-input-xs"
+													class="h5-color-graphite">
+													<td><h5>{{::languageConstants.get('Port')}}</h5></td>
+													<td>:</td>
+													<td><input type="TEXT" class="h5-input-xs"
+														ng-model="ZSYTABModule.ZSYTABRecord.AL33" name="AL33"
+														title="Port" style="text-align: left" maxlength="30"></td>
+
+												</tr>
+												<tr input type="text" class="h5-input-xs"
+													class="h5-color-graphite">
+													<td><h5>{{::languageConstants.get('Program
+															Name')}}</h5></td>
+													<td>:</td>
+													<td><input type="TEXT" class="h5-input-sm"
+														ng-model="ZSYTABModule.ZSYTABRecord.AL35" name="AL35"
+														title="Program Name" style="text-align: left"
+														oninput="this.value = this.value.toLowerCase()"></td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</form>
